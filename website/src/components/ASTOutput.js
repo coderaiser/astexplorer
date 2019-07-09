@@ -7,69 +7,67 @@ import getFocusPath from './getFocusPath';
 const {useState, useMemo} = React;
 
 function formatTime(time) {
-  if (!time) {
-    return null;
-  }
-  if (time < 1000) {
-    return `${time}ms`;
-  }
-  return `${(time / 1000).toFixed(2)}s`;
+    if (!time) {
+        return null;
+    }
+    
+    if (time < 1000) {
+        return `${time}ms`;
+    }
+    return `${(time / 1000).toFixed(2)}s`;
 }
 
-export default function ASTOutput({parser, parseResult={}, cursor=null}) {
-  const [selectedOutput, setSelectedOutput] = useState(0);
-  const {ast=null} = parseResult;
-
-  const focusPath = useMemo(
-    () => ast && cursor != null ?
-      getFocusPath(parseResult.ast, cursor, parser) :
-      [],
-    [ast, cursor, parser],
-  );
-
-  let output;
-
-  if (parseResult.error) {
-    output =
-      <div style={{padding: 20}}>
-        {parseResult.error.message}
-      </div>;
-  } else if (ast) {
-    output = React.createElement(
-      visualizations[selectedOutput],
-      {parseResult, focusPath}
+export default function ASTOutput({parser, parseResult = {}, cursor = null}) {
+    const [selectedOutput, setSelectedOutput] = useState(0);
+    const {ast = null} = parseResult;
+    
+    const focusPath = useMemo(
+        () => ast && cursor != null ?
+            getFocusPath(parseResult.ast, cursor, parser) :
+            [],
+        [ast, cursor, parser],
     );
-  }
-
-  let buttons = visualizations.map(
-    (cls, index) =>
-      <button
+    
+    let output;
+    
+    if (parseResult.error) {
+        output =
+      <div style={{padding: 20}}>
+          {parseResult.error.message}
+      </div>;
+    } else if (ast) {
+        output = React.createElement(
+            visualizations[selectedOutput],
+            {parseResult, focusPath}
+        );
+    }
+    
+    const buttons = visualizations.map((cls, index) => <button
         key={index}
         value={index}
-        onClick={event => setSelectedOutput(event.target.value)}
+        onClick={(event) => setSelectedOutput(event.target.value)}
         className={cx({
-          active: selectedOutput == index,
+            active: selectedOutput == index,
         })}>
         {cls.name}
-      </button>
-  );
-
-  return (
-    <div className="output highlight">
-      <div className="toolbar">
-        {buttons}
-        <span className="time">
-          {formatTime(parseResult.time)}
-        </span>
-      </div>
-      {output}
-    </div>
-  );
+    </button>);
+    
+    return (
+        <div className="output highlight">
+            <div className="toolbar">
+                {buttons}
+                <span className="time">
+                    {formatTime(parseResult.time)}
+                </span>
+            </div>
+            {output}
+        </div>
+    );
 }
 
 ASTOutput.propTypes = {
-  parser: PropTypes.object.isRequired,
-  parseResult: PropTypes.object,
-  cursor: PropTypes.any,
+    parser: PropTypes.object.isRequired,
+    parseResult: PropTypes.object,
+    cursor: PropTypes.any,
 };
 

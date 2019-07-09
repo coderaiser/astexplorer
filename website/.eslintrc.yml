@@ -3,18 +3,19 @@ extends:
   - plugin:react/recommended
   - plugin:import/errors
   - plugin:import/warnings
+  - plugin:putout/recommended
 
 parserOptions:
-  ecmaVersion: 2018
+  ecmaVersion: 2019
   sourceType: module
   ecmaFeatures:
     jsx: true
-    experimentalObjectRestSpread: true
 
 plugins:
   - react
   - import
   - require-in-package
+  - putout
 
 rules:
   comma-dangle: ["error", "always-multiline"]
@@ -37,6 +38,9 @@ rules:
   require-in-package/require-in-package: "error"
 
 settings:
+  react: 
+    version: "16"
+
   import/resolver: "webpack"
   import/ignore:
     - node_modules

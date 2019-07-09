@@ -5,14 +5,14 @@ import React from 'react';
 import stringify from 'json-stringify-safe';
 
 export default function JSON({parseResult}) {
-  return (
-    <JSONEditor
-      className="container"
-      value={stringify(parseResult.ast, null, 2)}
-    />
-  );
+    return (
+        <JSONEditor
+            className="container"
+            value={stringify(parseResult.ast, null, 2)}
+        />
+    );
 }
 
 JSON.propTypes = {
-  parseResult: PropTypes.object,
+    parseResult: PropTypes.object,
 };

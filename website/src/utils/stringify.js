@@ -2,16 +2,16 @@
  * Converts a JS value to a sensible string representation.
  */
 export default function stringify(value) {
-  switch (typeof value) {
+    switch(typeof value) {
     case 'function':
-      return value.toString().match(/function[^(]*\([^)]*\)/)[0];
+        return value.toString().match(/function[^(]*\([^)]*\)/)[0];
     case 'object':
-      return value ? JSON.stringify(value, stringify) : 'null';
+        return value ? JSON.stringify(value, stringify) : 'null';
     case 'undefined':
-      return 'undefined';
+        return 'undefined';
     case 'number':
-      return global.isNaN(value) ? 'NaN' : value;
+        return global.isNaN(value) ? 'NaN' : value;
     default:
-      return JSON.stringify(value);
-  }
+        return JSON.stringify(value);
+    }
 }

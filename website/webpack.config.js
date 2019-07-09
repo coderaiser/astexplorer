@@ -43,10 +43,6 @@ const plugins = [
     /(cli-engine|testers\/rule-tester)/,
     'node-libs-browser/mock/empty'
   ),
-  new webpack.NormalModuleReplacementPlugin(
-    /load-rules/,
-    __dirname + '/src/parsers/js/transformers/eslint1/loadRulesShim.js'
-  ),
 
   // There seems to be a problem with webpack loading an index.js file that
   // is executable. If we change that to explicitly reference index.js, it seems
@@ -158,8 +154,7 @@ module.exports = Object.assign({
           path.join(__dirname, 'node_modules', 'eslint', 'lib'),
           path.join(__dirname, 'node_modules', 'eslint-scope'),
           path.join(__dirname, 'node_modules', 'eslint-visitor-keys'),
-          path.join(__dirname, 'node_modules', 'eslint3'),
-          path.join(__dirname, 'node_modules', 'eslint4'),
+          path.join(__dirname, 'node_modules', 'eslint6'),
           path.join(__dirname, 'node_modules', 'jscodeshift', 'src'),
           path.join(__dirname, 'node_modules', 'lodash-es'),
           path.join(__dirname, 'node_modules', 'prettier'),

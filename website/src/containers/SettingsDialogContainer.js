@@ -4,18 +4,18 @@ import {showSettingsDialog, getParser, getParserSettings} from '../store/selecto
 import SettingsDialog from '../components/dialogs/SettingsDialog';
 
 function mapStateToProps(state) {
-  return {
-    visible: showSettingsDialog(state),
-    parser: getParser(state),
-    parserSettings: getParserSettings(state),
-  };
+    return {
+        visible: showSettingsDialog(state),
+        parser: getParser(state),
+        parserSettings: getParserSettings(state),
+    };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    onSave: (parser, newSettings) => dispatch(setParserSettings(newSettings)),
-    onWantToClose: () => dispatch(closeSettingsDialog()),
-  };
+    return {
+        onSave: (parser, newSettings) => dispatch(setParserSettings(newSettings)),
+        onWantToClose: () => dispatch(closeSettingsDialog()),
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsDialog);
