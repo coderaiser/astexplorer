@@ -38,7 +38,8 @@ export default {
   },
 
   nodeToRange(node) {
-    let start, end;
+    let start;
+    let end;
     switch (node.TYPE) {
       case 'Token':
         start = end = node;

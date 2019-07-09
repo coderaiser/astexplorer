@@ -11,11 +11,11 @@ const acceptedFileTypes = new Map([
   ['text/plain', 'TEXT'],
 ]);
 
-categories.forEach(({ id, mimeTypes }) => {
-  mimeTypes.forEach(mimeType => {
+for (const { id, mimeTypes } of categories) {
+  for (const mimeType of mimeTypes) {
     acceptedFileTypes.set(mimeType, id);
-  });
-});
+  }
+}
 
 export default class PasteDropTarget extends React.Component {
   constructor(props) {
@@ -78,7 +78,7 @@ export default class PasteDropTarget extends React.Component {
 
     this._bindListener(target, 'drop', event => {
       this.setState({dragging: false});
-      let file = event.dataTransfer.files[0];
+      let [file] = event.dataTransfer.files;
       let categoryId = acceptedFileTypes.get(file.type);
       if (!categoryId || !this.props.onText) {
         return;

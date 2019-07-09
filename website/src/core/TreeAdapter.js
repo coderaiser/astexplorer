@@ -41,7 +41,9 @@ class TreeAdapter {
     if (!range) {
       // If the node doesn't have location data itself, try to derive it from
       // its first and last child.
-      let first, last;
+      let first;
+
+      let last;
       const iterator = this.walkNode(node);
       let next = iterator.next();
       if (!next.done) {
@@ -217,7 +219,10 @@ function createTreeAdapter(type, adapterOptions, filterValues) {
     throw new Error(`Unknown tree adapter type "${type}"`);
   }
   return new TreeAdapter(
-    Object.assign({}, TreeAdapterConfigs[type], adapterOptions),
+    {
+      ...TreeAdapterConfigs[type],
+      ...adapterOptions
+    },
     filterValues,
   );
 }

@@ -59,7 +59,7 @@ export default {
   /**
    * Whether or not the provided node should be automatically expanded.
    */
-  opensByDefault(_node, _key) {
+  opensByDefault() {
     return false;
   },
 

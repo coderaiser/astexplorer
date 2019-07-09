@@ -69,10 +69,10 @@ export default {
             ts.getLeadingCommentRanges(sourceFile.text, nodePos);
 
           if (Array.isArray(comments)) {
-            comments.forEach((comment) => {
+            for (const comment of comments) {
               comment.type = syntaxKind[comment.kind];
               comment.text = sourceFile.text.substring(comment.pos, comment.end);
-            });
+            }
 
             return comments;
           }

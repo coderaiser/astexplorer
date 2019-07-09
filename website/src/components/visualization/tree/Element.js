@@ -88,7 +88,9 @@ let Element = class extends React.Component {
   }
 
   _toggleClick(event) {
-    const shiftKey = event.shiftKey;
+    const {
+      shiftKey
+    } = event;
     const open = shiftKey || !this.state.open;
 
     const update  = () => {

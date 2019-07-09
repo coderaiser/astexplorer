@@ -98,12 +98,11 @@ export default class Editor extends React.Component {
 
       require(['prettier/standalone', 'prettier/parser-babylon'], (prettier, babylon) => {
         const currValue = instance.doc.getValue();
-        const options = Object.assign({},
-          defaultPrettierOptions,
-          {
-            printWidth: instance.display.maxLineLength,
-            plugins: [babylon],
-          });
+        const options = {
+          ...defaultPrettierOptions,
+          printWidth: instance.display.maxLineLength,
+          plugins: [babylon]
+        };
         instance.doc.setValue(prettier.format(currValue, options));
       });
     });
@@ -177,7 +176,9 @@ export default class Editor extends React.Component {
     this._unbindHandlers();
     this._markerRange = null;
     this._mark = null;
-    let container = this.container;
+    let {
+      container
+    } = this;
     container.removeChild(container.children[0]);
     this.codeMirror = null;
   }

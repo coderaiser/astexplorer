@@ -111,7 +111,9 @@ class Revision {
   }
 
   getTransformCode() {
-    const transform = this._data.transform;
+    const {
+      transform
+    } = this._data;
     if (transform) {
       return transform;
     }
@@ -137,7 +139,9 @@ class Revision {
   }
 
   getParserSettings() {
-    const settings = this._data.settings;
+    const {
+      settings
+    } = this._data;
     if (!settings) {
       return null;
     }

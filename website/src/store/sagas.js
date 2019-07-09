@@ -98,9 +98,7 @@ function *goBack() {
     yield take(actions.CLEAR_ERROR);
     global.location.hash = '';
   } finally {
-    if (yield cancelled()) {
-      // URL must have been changed while error dialog is open, nothing to do
-    }
+    yield cancelled();
   }
 }
 

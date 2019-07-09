@@ -5,10 +5,10 @@ const identity = v => v;
 
 function valuesFromArray(settings) {
   return settings.reduce(
-    (obj, name) => (
-      (obj[name] = settings.indexOf(name) > -1),
-      obj
-    ),
+    (obj, name) => {
+      obj[name] = settings.indexOf(name) > -1;
+      return obj;
+    },
     {}
   );
 }

@@ -380,7 +380,10 @@ function activeRevision(state=initialState.selectedRevision, action) {
 
 function pick(obj, ...properties) {
   return properties.reduce(
-    (result, prop) => (result[prop] = obj[prop], result),
+    (result, prop) => {
+      result[prop] = obj[prop];
+      return result;
+    },
     {}
   );
 }

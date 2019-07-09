@@ -91,10 +91,7 @@ JSCodeshiftEditor.propTypes = {
   keyMap: PropTypes.string,
 };
 
-JSCodeshiftEditor.defaultProps = Object.assign(
-  {},
-  Editor.defaultProps,
-  {
-    highlight: false,
-  }
-);
+JSCodeshiftEditor.defaultProps = {
+  ...Editor.defaultProps,
+  highlight: false
+};

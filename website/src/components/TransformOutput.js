@@ -84,7 +84,7 @@ export default class TransformOutput extends React.Component {
     if (!map) {
       return;
     }
-    const src = map.sourcesContent[0];
+    const [src] = map.sourcesContent;
     if (index === 0) {
       return { line: 0, ch: 0 };
     }
