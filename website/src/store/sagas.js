@@ -1,5 +1,3 @@
-/*eslint no-constant-condition:0*/
-
 import * as actions from './actions';
 import {
     takeEvery,
