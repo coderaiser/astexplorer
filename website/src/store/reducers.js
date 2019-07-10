@@ -49,7 +49,12 @@ const initialState = {
  */
 export function persist(state) {
     return {
-        ...pick(state, 'showTransformPanel', 'parserSettings', 'parserPerCategory'),
+        ...pick(
+            state,
+            'showTransformPanel',
+            'parserSettings',
+            'parserPerCategory'
+        ),
         workbench: {
             ...pick(state.workbench, 'parser', 'code', 'keyMap'),
             transform: pick(state.workbench.transform, 'code', 'transformer'),

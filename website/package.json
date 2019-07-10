@@ -30,6 +30,7 @@
     "inline-manifest-webpack-plugin": "^4.0.1",
     "js-yaml": "^3.5.2",
     "json-loader": "^0.5.3",
+    "madrun": "^2.1.2",
     "mini-css-extract-plugin": "^0.4.2",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.9.3",
@@ -128,12 +129,16 @@
     "yaml-ast-parser": "^0.0.43"
   },
   "scripts": {
-    "start": "http-server ../out",
-    "build": "rimraf ../out/* && cross-env NODE_ENV=production webpack --mode=production",
-    "build:dev": "rimraf ../out/* && NODE_ENV=development webpack --mode=development",
-    "watch": "webpack -dw --mode=development",
-    "lint": "eslint src/",
-    "fix:lint": "eslint --fix src",
-    "fontcustom": "fontcustom compile ./fontcustom/input-svg/ --config=./fontcustom/config.yml"
+    "start": "madrun start",
+    "build": "madrun build",
+    "build:dev": "madrun build:dev",
+    "watch": "madrun watch",
+    "eslint": "madrun eslint",
+    "fix:eslint": "madrun fix:eslint",
+    "putout": "madrun putout",
+    "fix:putout": "madrun fix:putout",
+    "lint": "madrun lint",
+    "fix:lint": "madrun fix:lint",
+    "fontcustom": "madrun fontcustom"
   }
 }
