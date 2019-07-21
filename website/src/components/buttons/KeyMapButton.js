@@ -15,7 +15,7 @@ class KeyMapButton extends React.Component {
                     type="button">
                     <i
                         className={cx({
-                            fa: true,
+                            'fa': true,
                             'fa-lg': true,
                             'fa-keyboard-o': true,
                         })}

@@ -40,7 +40,7 @@ export default class TransformButton extends React.Component {
                     disabled={!this.props.category.transformers.length}>
                     <i
                         className={cx({
-                            fa: true,
+                            'fa': true,
                             'fa-lg': true,
                             'fa-toggle-off': !this.props.showTransformer,
                             'fa-toggle-on': this.props.showTransformer,

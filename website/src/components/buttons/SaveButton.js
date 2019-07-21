@@ -12,7 +12,7 @@ export default function SaveButton({canSave, saving, forking, onSave}) {
             onClick={onSave}>
             <i
                 className={cx({
-                    fa: true,
+                    'fa': true,
                     'fa-spinner': saving,
                     'fa-pulse': saving,
                     'fa-floppy-o': !saving,

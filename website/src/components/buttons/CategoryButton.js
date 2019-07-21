@@ -4,19 +4,19 @@ import cx from 'classnames';
 import {getCategoryByID, categories} from '../../parsers';
 
 const categoryIcon = {
-    javascript: 'fa-jsfiddle',
-    css: 'fa-css3',
-    graphql: 'icon-GraphQL_Logo',
-    handlebars: 'icon-handlebars',
-    htmlmixed: 'fa-html5',
-    icu: 'icon-icu',
-    ocaml: 'icon-ocaml',
-    reason: 'icon-reason',
-    rust: 'icon-rust',
-    sql: 'fa-database',
+    'javascript': 'fa-jsfiddle',
+    'css': 'fa-css3',
+    'graphql': 'icon-GraphQL_Logo',
+    'handlebars': 'icon-handlebars',
+    'htmlmixed': 'fa-html5',
+    'icu': 'icon-icu',
+    'ocaml': 'icon-ocaml',
+    'reason': 'icon-reason',
+    'rust': 'icon-rust',
+    'sql': 'fa-database',
     'text/x-scala': 'icon-scala',
-    webidl: 'fa-th-list',
-    yaml: 'fa-yc',
+    'webidl': 'fa-th-list',
+    'yaml': 'fa-yc',
 };
 
 export default class CategoryButton extends React.Component {
@@ -36,7 +36,7 @@ export default class CategoryButton extends React.Component {
                 <span>
                     <i
                         className={cx(categoryIcon[this.props.category.id] || 'fa-file-o', {
-                            fa: true,
+                            'fa': true,
                             'fa-lg': true,
                             'fa-fw': true,
                         })}
@@ -48,7 +48,7 @@ export default class CategoryButton extends React.Component {
                         <button type="button">
                             <i
                                 className={cx(categoryIcon[category.id] || 'fa-file-o', {
-                                    fa: true,
+                                    'fa': true,
                                     'fa-fw': true,
                                 })}
                             />

@@ -69,7 +69,6 @@ export default (store) => (next) => (action) => {
                 });
             },
             (error) => {
-                console.error(error); // eslint-disable-line no-console
                 next({
                     type: 'SET_PARSE_RESULT',
                     result: {

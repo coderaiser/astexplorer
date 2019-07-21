@@ -19,7 +19,7 @@ export default class ForkButton extends React.Component {
                 onClick={onFork}>
                 <i
                     className={cx({
-                        fa: true,
+                        'fa': true,
                         'fa-spinner': forking,
                         'fa-pulse': forking,
                         'fa-code-fork': !forking,

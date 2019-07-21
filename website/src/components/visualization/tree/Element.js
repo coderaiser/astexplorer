@@ -149,9 +149,7 @@ let Element = class extends React.Component {
         const state = {error: null};
         try {
             state.value = this.state.value.call(this.props.parent);
-            console.log(state.value); // eslint-disable-line no-console
         } catch (err) {
-            console.error(`Unable to run "${this.props.name}": `, err.message); // eslint-disable-line no-console
             state.error = err;
         }
         this.setState(state);

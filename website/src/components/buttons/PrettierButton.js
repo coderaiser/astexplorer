@@ -8,7 +8,7 @@ export default function PrettierButton(props) {
         onClick={props.toggleFormatting}>
         <i
             className={cx({
-                fa: true,
+                'fa': true,
                 'fa-lg': true,
                 'fa-toggle-off': !props.enableFormatting,
                 'fa-toggle-on': props.enableFormatting,

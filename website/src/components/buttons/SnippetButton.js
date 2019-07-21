@@ -32,7 +32,7 @@ export default function SnippetButton(props) {
                 onClick={canForkAndNotSave ? props.onFork : props.onSave}>
                 <i
                     className={cx({
-                        fa: true,
+                        'fa': true,
                         'fa-spinner': savingOrForking,
                         'fa-pulse': savingOrForking,
                         'fa-floppy-o': !savingOrForking && !canForkAndNotSave,

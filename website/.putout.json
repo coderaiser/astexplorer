@@ -8,6 +8,9 @@
         },
         "src/parsers/js/recast.js": {
             "remove-unused-variables": false
+        },
+        ".eslintrc.js": {
+            "remove-console": true
         }
     },
     "rules": {

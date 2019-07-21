@@ -46,17 +46,17 @@ export default {
     
     getDefaultOptions() {
         return {
-            ecmaVersion: 7,
-            sourceType: 'module',
-            allowReserved: false,
-            allowReturnOutsideFunction: false,
-            allowImportExportEverywhere: false,
-            allowAwaitOutsideFunction: false,
-            allowHashBang: false,
-            locations: false,
-            loose: false,
-            ranges: false,
-            preserveParens: false,
+            'ecmaVersion': 7,
+            'sourceType': 'module',
+            'allowReserved': false,
+            'allowReturnOutsideFunction': false,
+            'allowImportExportEverywhere': false,
+            'allowAwaitOutsideFunction': false,
+            'allowHashBang': false,
+            'locations': false,
+            'loose': false,
+            'ranges': false,
+            'preserveParens': false,
             'plugins.jsx': true,
         };
     },
