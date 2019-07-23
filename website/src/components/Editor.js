@@ -8,9 +8,8 @@ import React from 'react';
 
 const defaultPrettierOptions = {
     printWidth: 80,
-    tabWidth: 2,
-    singleQuote: false,
-    trailingComma: 'none',
+    tabWidth: 4,
+    singleQuote: true,
     bracketSpacing: true,
     jsxBracketSameLine: false,
     parser: 'babylon',
