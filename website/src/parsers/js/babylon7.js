@@ -41,7 +41,8 @@ const ID = 'babylon7';
 export const defaultOptions = {
     sourceType: 'module',
     allowImportExportEverywhere: false,
-    allowReturnOutsideFunction: false,
+    allowReturnOutsideFunction: true,
+    allowAwaitOutsideFunction: true,
     ranges: false,
     tokens: false,
     plugins: [
