@@ -8,7 +8,7 @@ export default function JSON({parseResult}) {
     return (
         <JSONEditor
             className="container"
-            value={stringify(parseResult.ast, null, 2)}
+            value={stringify(parseResult.ast, null, 4)}
         />
     );
 }

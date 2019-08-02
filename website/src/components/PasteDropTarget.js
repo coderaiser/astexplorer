@@ -136,7 +136,7 @@ export default class PasteDropTarget extends React.Component {
             return Promise.resolve(json);
         }
         return importEscodegen().then((escodegen) => {
-            return escodegen.generate(ast, {format: {indent: {style: '  '}}});
+            return escodegen.generate(ast, {format: {indent: {style: '    '}}});
         });
     }
     

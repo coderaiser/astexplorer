@@ -92,6 +92,7 @@ export default class Editor extends React.Component {
                 mode: this.props.mode,
                 lineNumbers: this.props.lineNumbers,
                 readOnly: this.props.readOnly,
+                indentUnit: 4,
             }
         );
         
