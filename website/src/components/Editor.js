@@ -10,9 +10,11 @@ const defaultPrettierOptions = {
     printWidth: 80,
     tabWidth: 4,
     singleQuote: true,
-    bracketSpacing: true,
+    bracketSpacing: false,
     jsxBracketSameLine: false,
     parser: 'babylon',
+    trailingComma: 'es5',
+    arrowParens: 'always',
 };
 
 export default class Editor extends React.Component {
