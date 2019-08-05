@@ -5,6 +5,7 @@ import * as selectors from '../store/selectors';
 
 function mapStateToProps(state) {
     return {
+        parser: state.workbench.parser,
         transformer: selectors.getTransformer(state),
         // Either the transform example or the transform code from the current
         // revision. This is what we compare against to determine whether something

@@ -37,7 +37,7 @@ const availablePlugins = [
     'throwExpressions',
 ];
 
-const ID = 'babylon7';
+const ID = 'babel';
 export const defaultOptions = {
     sourceType: 'module',
     allowImportExportEverywhere: false,

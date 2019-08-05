@@ -6,7 +6,6 @@ import {getCategoryByID, categories} from '../../parsers';
 const categoryIcon = {
     'javascript': 'fa-jsfiddle',
     'css': 'fa-css3',
-    'graphql': 'icon-GraphQL_Logo',
     'handlebars': 'icon-handlebars',
     'htmlmixed': 'fa-html5',
     'icu': 'icon-icu',

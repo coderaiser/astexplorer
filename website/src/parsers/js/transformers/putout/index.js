@@ -10,7 +10,7 @@ export default {
     version: pkg.version,
     homepage: pkg.homepage,
     
-    defaultParserID: 'babylon7',
+    defaultParserID: 'babel',
     
     loadTransformer(callback) {
         require(
@@ -19,12 +19,14 @@ export default {
         );
     },
     
-    transform({ putout }, transformCode, source) {
+    transform({ putout }, transformCode, source, parser) {
         const plugin = compileModule(transformCode, {
             require: () => putout,
         });
         
         const { code } = putout(source, {
+            parser,
+            cache: false,
             plugins: [{
                 plugin,
             }],

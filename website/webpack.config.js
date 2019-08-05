@@ -28,7 +28,6 @@ const plugins = [
     // We don't use these parsers with prettier, so we don't need to include them
     new webpack.IgnorePlugin(/parser-flow/, /\/prettier/),
     new webpack.IgnorePlugin(/parser-glimmer/, /\/prettier/),
-    new webpack.IgnorePlugin(/parser-graphql/, /\/prettier/),
     new webpack.IgnorePlugin(/parser-markdown/, /\/prettier/),
     new webpack.IgnorePlugin(/parser-parse5/, /\/prettier/),
     new webpack.IgnorePlugin(/parser-postcss/, /\/prettier/),

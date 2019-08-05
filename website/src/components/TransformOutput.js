@@ -7,7 +7,7 @@ import {SourceMapConsumer} from 'source-map/lib/source-map-consumer';
 
 import stringify from 'json-stringify-safe';
 
-function transform(transformer, transformCode, code) {
+function transform(transformer, transformCode, code, parser) {
     if (!transformer._promise) {
         transformer._promise = new Promise(transformer.loadTransformer);
     }
@@ -16,7 +16,8 @@ function transform(transformer, transformCode, code) {
         const result = transformer.transform(
             realTransformer,
             transformCode,
-            code
+            code,
+            parser,
         );
         return Promise.resolve(result).then((result) => {
             let map = null;
@@ -64,7 +65,8 @@ export default class TransformOutput extends React.Component {
             transform(
                 nextProps.transformer,
                 nextProps.transformCode,
-                nextProps.code
+                nextProps.code,
+                nextProps.parser,
             ).then(
                 ({ result, map }) => ({ result, map, error: null }),
                 (error) => {
