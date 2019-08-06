@@ -1,5 +1,6 @@
 import {getParser, getParserSettings, getCode} from './selectors';
 import {ignoreKeysFilter, locationInformationFilter, functionFilter, emptyKeysFilter, typeKeysFilter} from '../core/TreeAdapter.js';
+import estreeToBabel from 'estree-to-babel';
 
 function parse(parser, code, parserSettings) {
     if (!parser._promise) {
@@ -9,7 +10,7 @@ function parse(parser, code, parserSettings) {
         realParser,
         code,
         parserSettings || parser.getDefaultOptions(),
-    ));
+    )).then(estreeToBabel);
 }
 
 export default (store) => (next) => (action) => {

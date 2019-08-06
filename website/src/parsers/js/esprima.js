@@ -36,8 +36,7 @@ export default {
     getDefaultOptions() {
         return {
             sourceType: 'module',
-            loc: false,
-            range: true,
+            loc: true,
             tokens: false,
             comment: false,
             attachComment: false,
