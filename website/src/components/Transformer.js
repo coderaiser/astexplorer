@@ -1,5 +1,4 @@
 import Editor from './Editor';
-import JSCodeshiftEditor from './JSCodeshiftEditor';
 import PropTypes from 'prop-types';
 import PubSub from 'pubsub-js';
 import React from 'react';
@@ -13,7 +12,7 @@ function resize() {
 
 export default function Transformer(props) {
     const plainEditor = React.createElement(
-        props.transformer.id === 'jscodeshift' ? JSCodeshiftEditor : Editor,
+        Editor,
         {
             highlight: false,
             value: props.transformCode,

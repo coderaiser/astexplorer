@@ -98,12 +98,6 @@ class Revision {
     
     getTransformerID() {
         const transformerID = this._data.toolID;
-        
-        if (!transformerID && this.getTransformCode()) {
-            // jscodeshift was the first transformer tool. Instead of updating
-            // existing rows in the DB, we hardcode the value here
-            return 'jscodeshift';
-        }
         return transformerID;
     }
     
