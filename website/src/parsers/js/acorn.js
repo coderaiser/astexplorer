@@ -14,17 +14,25 @@ export default {
     locationProps: new Set(['range', 'loc', 'start', 'end']),
     
     loadParser(callback) {
-        require(['acorn', 'acorn-loose', 'acorn-jsx'], (acorn, acornLoose, acornJsx) => {
+        require(['acorn', 'acorn-loose', 'acorn-jsx', 'acorn-stage3'], (acorn, acornLoose, acornJsx, acornStage3) => {
             callback({
                 acorn,
                 acornLoose,
                 acornJsx,
+                acornStage3,
             });
         });
     },
     
     parse(parsers, code, options = {}) {
         let parser;
+        
+        const {acorn} = parsers;
+        
+        // that's right, hot fix
+        acorn.version = '6.3.0';
+        
+        parsers.acorn.Parser.extend(parsers.acornStage3);
         
         if (options['plugins.jsx'] && !options.loose) {
             const cls = parsers.acorn.Parser.extend(parsers.acornJsx());
@@ -46,12 +54,12 @@ export default {
     
     getDefaultOptions() {
         return {
-            'ecmaVersion': 7,
+            'ecmaVersion': 10,
             'sourceType': 'module',
             'allowReserved': false,
-            'allowReturnOutsideFunction': false,
-            'allowImportExportEverywhere': false,
-            'allowAwaitOutsideFunction': false,
+            'allowReturnOutsideFunction': true,
+            'allowImportExportEverywhere': true,
+            'allowAwaitOutsideFunction': true,
             'allowHashBang': false,
             'locations': false,
             'loose': false,

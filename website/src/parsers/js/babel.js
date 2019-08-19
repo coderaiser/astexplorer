@@ -40,7 +40,7 @@ const availablePlugins = [
 const ID = 'babel';
 export const defaultOptions = {
     sourceType: 'module',
-    allowImportExportEverywhere: false,
+    allowImportExportEverywhere: true,
     allowReturnOutsideFunction: true,
     allowAwaitOutsideFunction: true,
     ranges: false,
