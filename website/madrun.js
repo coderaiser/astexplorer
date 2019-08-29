@@ -7,12 +7,11 @@ module.exports = {
     'build': () => build('production'),
     'build:dev': () => build('development'),
     'watch': () => 'webpack -dw --mode=development',
-    'eslint': () => 'eslint src webpack.config.js .eslintrc.js --ignore-pattern \'!.eslintrc.js\'',
     'fix:eslint': () => 'eslint --fix src',
-    'putout': () => 'putout webpack.config.js src',
+    'putout': () => 'putout src webpack.config.js .eslintrc.js',
     'fix:putout': () => run('putout', '--fix'),
-    'lint': () => run('eslint'),
-    'fix:lint': () => run('eslint', '--fix'),
+    'lint': () => run('putout'),
+    'fix:lint': () => run('putout', '--fix'),
     'fontcustom': () => 'fontcustom compile ./fontcustom/input-svg/ --config=./fontcustom/config.yml',
 };
 
