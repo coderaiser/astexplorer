@@ -27,6 +27,7 @@ export default {
         const { code } = putout(source, {
             parser,
             cache: false,
+            fixCount: 1,
             plugins: [{
                 plugin,
             }],
