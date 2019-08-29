@@ -1,3 +1,5 @@
+'use strict';
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -174,20 +176,16 @@ module.exports = Object.assign(
                     options: {
                         babelrc: false,
                         presets: [
-                            [
-                                require.resolve('@babel/preset-env'),
-                                {
-                                    targets: {
-                                        browsers: ['defaults'],
-                                    },
-                                    modules: 'commonjs',
-                                },
-                            ],
+                            [require.resolve('@babel/preset-env'), {
+                                modules: 'commonjs',
+                            }],
                             require.resolve('@babel/preset-react'),
                         ],
+                        /*
                         plugins: [
                             require.resolve('@babel/plugin-transform-runtime'),
                         ],
+                        */
                     },
                 },
                 {
@@ -241,7 +239,7 @@ module.exports = Object.assign(
         },
         
         output: {
-            path: path.resolve(__dirname, '../out'),
+            path: path.resolve(__dirname, '../out-build'),
             filename: DEV ? '[name].js' : `[name]-[contenthash]-${CACHE_BREAKER}.js`,
             chunkFilename: DEV ? '[name].js' : `[name]-[contenthash]-${CACHE_BREAKER}.js`,
         },
