@@ -54,4 +54,5 @@ Transformer.propTypes = {
     onContentChange: PropTypes.func,
     toggleFormatting: PropTypes.func,
     enableFormatting: PropTypes.bool,
+    parser: PropTypes.string,
 };
