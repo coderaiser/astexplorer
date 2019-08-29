@@ -55,7 +55,6 @@ module.exports = {
         'import/namespace': 'error',
         'import/export': 'error',
         'require-in-package/require-in-package': 'error',
-        'putout/putout': ['error', require('./.putout.json')],
     },
     settings: {
         'react': {
