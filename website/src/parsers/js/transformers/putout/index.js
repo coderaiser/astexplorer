@@ -14,7 +14,7 @@ export default {
     
     loadTransformer(callback) {
         require(
-            ['putout/dist/putout.js'],
+            ['putout/slim/putout.js'],
             (putout) => callback({ putout })
         );
     },

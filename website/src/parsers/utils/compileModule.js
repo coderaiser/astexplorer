@@ -1,4 +1,4 @@
-import {parse} from 'putout/dist/putout';
+import {parse} from 'putout/slim/putout';
 
 export default function compileModule(code, globals = {}) {
     const exports = {};
