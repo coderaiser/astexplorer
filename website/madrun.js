@@ -13,6 +13,19 @@ module.exports = {
     'lint': () => run('putout'),
     'fix:lint': () => run('putout', '--fix'),
     'fontcustom': () => 'fontcustom compile ./fontcustom/input-svg/ --config=./fontcustom/config.yml',
+    'init': () => {
+        const eslint = 'rm -rf node_modules/eslint/node_modules/acorn';
+        const rmPutout = 'rm -rf node_modules/putout';
+        const lnPutout = 'ln -s ~/putout/packages/putout node_modules/putout';
+        
+        const cmd = [
+            eslint,
+            rmPutout,
+            lnPutout,
+        ].join('&&');
+        
+        return cmd;
+    },
 };
 
 function build(env) {

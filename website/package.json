@@ -124,12 +124,12 @@
     "build": "madrun build",
     "build:dev": "madrun build:dev",
     "watch": "madrun watch",
-    "eslint": "madrun eslint",
     "fix:eslint": "madrun fix:eslint",
     "putout": "madrun putout",
     "fix:putout": "madrun fix:putout",
     "lint": "madrun lint",
     "fix:lint": "madrun fix:lint",
-    "fontcustom": "madrun fontcustom"
+    "fontcustom": "madrun fontcustom",
+    "init": "madrun init"
   }
 }
